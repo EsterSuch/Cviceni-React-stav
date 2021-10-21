@@ -16,27 +16,42 @@ import './zarovka.css'
 // Neboj se a ptej se kouče, když nebudeš vědět.
 
 const Uloha1 = () => {
-	const [jeZapnuta, setJeZapnuta] = useState(false)
+  const [jeZapnuta, setJeZapnuta] = useState(false);
+  const zapnout = () => {
+    setJeZapnuta(true);
+  };
+  const vypnout = () => {
+    setJeZapnuta(false);
+  };
 
-	return (
-		<div className="zarovka">
-			<img
-				src={jeZapnuta ? onUrl : offUrl}
-				width={80}
-				height={80}
-				alt={jeZapnuta ? 'Zapnutá žárovka' : 'Vypnutá žárovka'}
-				className="zarovka__ikona"
-			/>
-			<div className="zarovka__tlacitka">
-				<button className="zarovka__tlacitko" disabled={jeZapnuta}>
-					zapnout
-				</button>
-				<button className="zarovka__tlacitko" disabled={!jeZapnuta}>
-					vypnout
-				</button>
-			</div>
-		</div>
-	)
-}
+  return (
+    <div className="zarovka">
+      <img
+        src={jeZapnuta ? onUrl : offUrl}
+        width={80}
+        height={80}
+        alt={jeZapnuta ? "Zapnutá žárovka" : "Vypnutá žárovka"}
+        className="zarovka__ikona"
+      />
+      <div className="zarovka__tlacitka">
+        <button
+          onClick={zapnout}
+          className="zarovka__tlacitko"
+          disabled={jeZapnuta}
+        >
+          zapnout
+        </button>
+        <button
+          onClick={vypnout}
+          className="zarovka__tlacitko"
+          disabled={!jeZapnuta}
+        >
+          vypnout
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default Uloha1;
+
