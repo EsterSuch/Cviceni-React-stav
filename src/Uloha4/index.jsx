@@ -51,7 +51,7 @@ const Uloha4 = () => {
 
   return (
     <div className="carousel">
-      <button disabled={false} onClick={predchozi} className="carousel__predchozi" aria-label="předchozí">
+      <button disabled="false" onClick={predchozi} className="carousel__predchozi" aria-label="předchozí">
         ←
       </button>
       <div className="carousel__media">
