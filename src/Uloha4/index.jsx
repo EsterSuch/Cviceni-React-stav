@@ -51,7 +51,7 @@ const Uloha4 = () => {
 
   return (
     <div className="carousel">
-      <button disabled="false" onClick={predchozi} className="carousel__predchozi" aria-label="předchozí">
+      <button disabled="true" onClick={predchozi} className="carousel__predchozi" aria-label="předchozí">
         ←
       </button>
       <div className="carousel__media">
@@ -61,7 +61,7 @@ const Uloha4 = () => {
           alt=""
         />
       </div>
-      <button disabled={false} onClick={dalsi} className="carousel__dalsi" aria-label="další">
+      <button disabled="true" onClick={dalsi} className="carousel__dalsi" aria-label="další">
         →
       </button>
     </div>
