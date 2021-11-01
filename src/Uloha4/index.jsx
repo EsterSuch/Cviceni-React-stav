@@ -44,14 +44,12 @@ const Uloha4 = () => {
 
   const dalsi = () => {
     setPoradi(poradi + 1);
-    if (poradi > [zdroj.lenght-1]){
-    disabled;
-    }
   };
+  
 
   return (
     <div className="carousel">
-      <button disabled="true" onClick={predchozi} className="carousel__predchozi" aria-label="předchozí">
+      <button onClick={predchozi} className="carousel__predchozi" aria-label="předchozí" disabled={poradi < 1}>
         ←
       </button>
       <div className="carousel__media">
@@ -61,11 +59,12 @@ const Uloha4 = () => {
           alt=""
         />
       </div>
-      <button disabled="true" onClick={dalsi} className="carousel__dalsi" aria-label="další">
+      <button onClick={dalsi} className="carousel__dalsi" aria-label="další" disabled={poradi > [zdroj.length-2]}>
         →
       </button>
     </div>
   )
-}
+  
+}; 
 
 export default Uloha4;

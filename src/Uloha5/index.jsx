@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './hamburger.css'
 
 // Tvoříš rozbalovací hamburger menu.
@@ -18,29 +18,36 @@ import './hamburger.css'
 // Pro otevřené přidej navíc `hamburger--otevrene`.
 
 const Uloha5 = () => {
-	return (
-		<>
-			<button className="hamburger" aria-label="menu">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-			<ul>
-				<li>
-					<a href="#o-nas">O nás</a>
-				</li>
-				<li>
-					<a href="#co-delame">Co děláme</a>
-				</li>
-				<li>
-					<a href="#kontakty">Kontakty</a>
-				</li>
-				<li>
-					<a href="#cenik">Ceník</a>
-				</li>
-			</ul>
-		</>
-	)
+
+  const [rozbalit, setRozbalit] = useState(false);
+  const changeMenu = () => {
+    setRozbalit(!rozbalit);
+  }
+  return (
+    <>
+      <button className={rozbalit ? "hamburger hamburger--otevrene" : "hamburger"} aria-label="menu" onClick={changeMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      {rozbalit && (
+      <ul>
+        <li>
+          <a href="#o-nas">O nás</a>
+        </li>
+        <li>
+          <a href="#co-delame">Co děláme</a>
+        </li>
+        <li>
+          <a href="#kontakty">Kontakty</a>
+        </li>
+        <li>
+          <a href="#cenik">Ceník</a>
+        </li>
+      </ul>
+      )}
+    </>
+  )
 }
 
 export default Uloha5;
